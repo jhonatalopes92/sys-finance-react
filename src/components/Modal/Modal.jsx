@@ -4,9 +4,10 @@ import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { PlusCircle } from 'phosphor-react'
+import Input from '../Input/inpu'
 
-export default function Modal() {
-  const [open, setOpen] = useState(true)
+export default function Modal({open, setOpen}) {
+  
 
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -31,15 +32,9 @@ export default function Modal() {
                     Novo produto
                   </DialogTitle>
                   <div className="mt-2">
-                    <div className="flex flex-col">
-                        <label htmlFor="">Nome do produto</label>
-                        <input type="text"  className="border border-[#118dc0] px-4 py-2 outline-none rounded"/>
-                    </div>
+                    <Input title="Nome do produto" id="name"/>
+                    <Input title="Preço" id="price"/>
                   </div>
-                  <div className="flex flex-col">
-                        <label htmlFor="">Preço do produto</label>
-                        <input type="text"  className="border border-[#118dc0] px-4 py-2 outline-none rounded"/>
-                    </div>
                 </div>
               </div>
             </div>
